@@ -43,7 +43,7 @@ jacocoTestReport {
 	// exclude main classes
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: '**/RewardApplication.class')
+			fileTree(dir: it, exclude: ['**/RewardApplication.class', '**/SpringConfig.class'])
 		}))
 	}
 	finalizedBy 'jacocoTestCoverageVerification'
@@ -77,7 +77,6 @@ jacocoTestCoverageVerification {
 				maximum = 200
 			}
 
-
 			excludes = []
 		}
 
@@ -85,10 +84,10 @@ jacocoTestCoverageVerification {
 		rule {
 		}
 	}
-
+//	exclude Main Class
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: '**/RewardApplication.class')
+			fileTree(dir: it, exclude: ['**/RewardApplication.class' , '**/SpringConfig.class'])
 		}))
 	}
 }
