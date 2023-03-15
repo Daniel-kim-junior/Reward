@@ -18,7 +18,7 @@ public class UserTest {
     }
 
     /*
-    * User DAO를 생성하는 Test
+    * User VO를 생성하고 Mem DAO에 접근하여 생성하는 Test
     * By Daniel
     * 2023-03-15
     * */
@@ -38,6 +38,11 @@ public class UserTest {
         assertThat(repoSize).isEqualTo(1);
     }
 
+    /*
+     * VO를 DAO를 이용해 Repo에서 찾는 메소드 test
+     * By Daniel
+     * 2023-03-15
+     * */
     @DisplayName("find user test")
     @Test
     void findUser() {
