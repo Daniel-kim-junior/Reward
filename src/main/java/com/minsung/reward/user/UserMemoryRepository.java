@@ -1,5 +1,7 @@
 package com.minsung.reward.user;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +9,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 // User MemoryRepo for MemoryRepository
+@Component
 public class UserMemoryRepository implements UserRepository {
     private static final Map<UUID, User> memoryRepository = new ConcurrentHashMap<>();
 

@@ -8,7 +8,11 @@ public class UserTest {
     static UserRepository userRepository;
     @BeforeAll
     static void beforeAll() throws Exception {
-        userRepository = SpringConfig.getUserRepository();
+        try {
+            userRepository = SpringConfig.getUserRepository();
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
     }
 
     @AfterEach
