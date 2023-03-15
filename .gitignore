@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### log
-myapp.log
+*.log
