@@ -1,15 +1,13 @@
 package com.minsung.reward.user;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 // User MemoryRepo for MemoryRepository
-@Component
+@Repository
 public class UserMemoryRepository implements UserRepository {
     private static final Map<Long, User> memoryRepository = new ConcurrentHashMap<>();
 

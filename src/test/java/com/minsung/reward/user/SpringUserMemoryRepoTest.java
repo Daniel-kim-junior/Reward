@@ -1,25 +1,14 @@
 package com.minsung.reward.user;
-import com.minsung.reward.SpringConfig;
 import org.junit.jupiter.api.*;
-import java.util.UUID;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import static org.assertj.core.api.Assertions.*;
 
-public class UserTest {
-    static UserRepository userRepository;
-    @BeforeAll
-    static void beforeAll() throws Exception {
-        try {
-            userRepository = SpringConfig.getUserRepository();
-        } catch (Exception e) {
-            throw new Exception(e);
-        }
-    }
-
-    @AfterEach
-    void afterEach() throws Exception {
-//       repository 초기화
-        userRepository.emptyRepo();
-    }
+// Spring Test Annotation
+@SpringBootTest
+public class SpringUserMemoryRepoTest {
+    @Autowired
+    private UserRepository userRepository;
 
     /*
     * User VO를 생성하고 Mem DAO에 접근하여 생성하는 Test
@@ -29,9 +18,11 @@ public class UserTest {
     @DisplayName("user join test")
     @Test
     void makeUser() {
-        Long uid = 1L;
 //    User 생성 (give)
-        User user1 = new User(uid , "minsung");
+        User user1 = User.builder()
+                .userName("minsung")
+                .uid(1L)
+                .build();
 
 //      makeUser(when)
         userRepository.join(user1);
@@ -51,8 +42,10 @@ public class UserTest {
     @Test
     void findUser() {
 
-        User user1 = new User(1L, "minsung");
-
+        User user1 = User.builder()
+                .userName("minsung")
+                .uid(1L)
+                .build();
 //        give
         userRepository.join(user1);
 
