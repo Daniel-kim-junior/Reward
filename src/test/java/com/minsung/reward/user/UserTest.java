@@ -29,7 +29,7 @@ public class UserTest {
     @DisplayName("user join test")
     @Test
     void makeUser() {
-        UUID uid = UUID.randomUUID();
+        Long uid = 1L;
 //    User 생성 (give)
         User user1 = new User(uid , "minsung");
 
@@ -50,14 +50,14 @@ public class UserTest {
     @DisplayName("find user test")
     @Test
     void findUser() {
-        UUID uid = UUID.randomUUID();
-        User user1 = new User(uid, "minsung");
+
+        User user1 = new User(1L, "minsung");
 
 //        give
         userRepository.join(user1);
 
 //        when
-        User user2 = userRepository.find(uid);
+        User user2 = userRepository.find(1L);
 
 //        then
         assertThat(user1).isSameAs(user2);

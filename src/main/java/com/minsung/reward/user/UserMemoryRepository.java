@@ -11,15 +11,15 @@ import java.util.concurrent.ConcurrentHashMap;
 // User MemoryRepo for MemoryRepository
 @Component
 public class UserMemoryRepository implements UserRepository {
-    private static final Map<UUID, User> memoryRepository = new ConcurrentHashMap<>();
+    private static final Map<Long, User> memoryRepository = new ConcurrentHashMap<>();
 
     @Override
     public void join(User user) {
-        memoryRepository.put(user.uid, user);
+        memoryRepository.put(user.getUid(), user);
     }
 
     @Override
-    public User find(UUID uid) {
+    public User find(Long uid) {
         return memoryRepository.get(uid);
     }
 
