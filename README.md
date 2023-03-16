@@ -2,11 +2,11 @@
 
 ---
 ### Code ManageMent Library :
-  - Jacoco(Test Coverage)
+  - Jacoco(Test Coverage) - Minimum Test Coverage Percentage = 80%
   - Swagger(Rest API Docs)
   - P6spy(Data access Logger)
   - Lombok(Annotation Processor)
-  - Minimum Test Coverage Percentage = 80%
+  - Spring-boot-starter-devtools
 
 ### UserRepository (Interface)
 
