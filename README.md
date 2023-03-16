@@ -7,7 +7,8 @@
   - P6spy(Data access Logger)
   - Lombok(Annotation Processor)
   - Spring-boot-starter-devtools
-
+### FrontEnd :
+  - Thymeleaf templates
 ### UserRepository (Interface)
 
 ### UserMemoryRepository (ConcurrentHashMap - DAO)
