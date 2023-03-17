@@ -1,4 +1,5 @@
 package com.minsung.reward.user;
+import com.minsung.reward.domain.User;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
