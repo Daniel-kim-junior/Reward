@@ -16,7 +16,7 @@ public class User {
     @Column(name = "user_name")
     private String name;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "email_id")
     private Email email;
 

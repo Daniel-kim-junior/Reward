@@ -17,15 +17,15 @@ public class RewardList {
     @Column(name = "reward_list_id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reward_id")
     private Reward reward;
 
-    private LocalDateTime apply; // 응모 시간
+    private LocalDateTime applyReward; // 응모 시간
 
 
 
