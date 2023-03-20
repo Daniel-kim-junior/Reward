@@ -25,7 +25,7 @@ public class RewardList {
     @JoinColumn(name = "reward_id")
     private Reward reward;
 
-    private LocalDateTime applyReward; // 응모 시간
+    private LocalDateTime applyReward; // 참가 시간
 
 
 

@@ -13,11 +13,9 @@ public class User {
     @Id @GeneratedValue
     @Column(name = "user_id")
     private Long id;
-    @Column(name = "user_name")
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "email_id")
-    private Email email;
+    @Enumerated
+    private EmailAddr email;
 
 }

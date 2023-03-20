@@ -2,6 +2,6 @@ package com.minsung.reward.domain;
 
 
 
-public enum Address {
+public enum EmailAddr {
     GMAIL, NAVER, DAUM
 }
