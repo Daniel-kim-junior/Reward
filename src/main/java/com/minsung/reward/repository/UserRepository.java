@@ -1,4 +1,4 @@
-package com.minsung.reward.user;
+package com.minsung.reward.repository;
 
 import com.minsung.reward.domain.User;
 

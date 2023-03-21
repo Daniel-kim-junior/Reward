@@ -1,8 +1,7 @@
-package com.minsung.reward.user;
+package com.minsung.reward.repository;
 
 import com.minsung.reward.domain.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,20 +10,16 @@ import javax.persistence.EntityManager;
 @RequiredArgsConstructor
 public class UserMySQLRepository implements UserRepository {
 
-    private EntityManager entityManager;
-
-    @Autowired
-    private EntityManager em;
-
+    private final EntityManager em;
 
     @Override
     public void join(User user) {
-
+        em.persist(user);
     }
 
     @Override
     public User find(Long uid) {
-        return null;
+        return em.find(User.class, uid);
     }
 
     @Override
@@ -36,4 +31,8 @@ public class UserMySQLRepository implements UserRepository {
     public void emptyRepo() {
 
     }
+
+
+
+
 }
